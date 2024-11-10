@@ -38,7 +38,7 @@ services:
     container_name: webserver
     restart: unless-stopped
     ports:
-      - "80:80"
+      - "8080:8080"
     volumes:
       - wordpress:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
@@ -54,7 +54,7 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - wordpress:/var/www/html
-    command: certonly --webroot --webroot-path=/var/www/html --email sammy@your_domain --agree-tos --no-eff-email --staging -d your_domain -d www.your_domain
+    command: certonly --webroot --webroot-path=/var/www/html --email collins@comwenga.com --agree-tos --no-eff-email --staging -d comwenga.com -d www.comwenga.com
 
 volumes:
   certbot-etc:
