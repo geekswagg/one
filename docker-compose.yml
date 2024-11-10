@@ -55,3 +55,12 @@ services:
       - certbot-etc:/etc/letsencrypt
       - wordpress:/var/www/html
     command: certonly --webroot --webroot-path=/var/www/html --email sammy@your_domain --agree-tos --no-eff-email --staging -d your_domain -d www.your_domain
+
+volumes:
+  certbot-etc:
+  wordpress:
+  dbdata:
+
+networks:
+  app-network:
+    driver: bridge
